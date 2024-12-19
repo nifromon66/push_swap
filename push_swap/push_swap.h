@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 15:34:17 by nifromon          #+#    #+#             */
-/*   Updated: 2024/12/15 20:58:48 by nifromon         ###   ########.fr       */
+/*   Updated: 2024/12/19 09:44:12 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ void    dclst_clear(t_stack **head);
 
 // Function to execute the instructions
     // Function to swap
-void   swap_non_adjacent_nodes(t_stack **head, t_stack *node1, t_stack *node2);
-void   swap_adjacent_nodes(t_stack **head, t_stack *node1, t_stack *node2);
+void   swap_non_adjacent_nodes(t_stack *node1, t_stack *node2);
+void   swap_adjacent_nodes(t_stack *node1, t_stack *node2);
 int    swap_nodes(t_stack **head, t_stack *node1, t_stack *node2);
 int    swap_a(t_stack **stack_a);
 int    swap_b(t_stack **stack_b);

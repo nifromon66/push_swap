@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/11 16:20:05 by nifromon          #+#    #+#             */
-/*   Updated: 2024/12/15 21:58:48 by nifromon         ###   ########.fr       */
+/*   Updated: 2024/12/19 09:42:23 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 int main(int argc, char *argv[])
 {
     t_stack *stack_a;
-    t_stack *stack_b;
 
     stack_a = NULL;
-    stack_b = NULL;
     if (argc < 2)
         return (0);
     if (check_input(argc, argv) == -1)
