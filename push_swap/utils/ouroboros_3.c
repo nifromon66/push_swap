@@ -6,14 +6,14 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:29:15 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
 // Function to count the number of nodes in the doubly circular linked list
-int	Ouroboros_count_nodes(t_stack *head)
+int	ouroboros_count_nodes(t_stack *head)
 {
 	t_stack	*current;
 	int		count;
@@ -90,7 +90,7 @@ static void	swap_non_adjacent_nodes(t_stack *node1, t_stack *node2)
 }
 
 // Function to swap 2 nodes in the doubly circular linked list
-int	Ouroboros_swap_nodes(t_stack **head, t_stack *node1, t_stack *node2)
+int	ouroboros_swap_nodes(t_stack **head, t_stack *node1, t_stack *node2)
 {
 	if (!head || !*head || !node1 || !node2 || (node1 == node2))
 		return (-1);

@@ -6,14 +6,14 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:25:20 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/push_swap.h"
 
 // Function to print the doubly circular linked list
-void	Ouroboros_print(t_stack *head)
+void	ouroboros_print(t_stack *head)
 {
 	t_stack	*current;
 
@@ -31,7 +31,7 @@ void	Ouroboros_print(t_stack *head)
 }
 
 // Function to find the highest value in the doubly circular linked list
-t_stack	*Ouroboros_find_max(t_stack *head)
+t_stack	*ouroboros_find_max(t_stack *head)
 {
 	t_stack	*current;
 	t_stack	*max;
@@ -52,7 +52,7 @@ t_stack	*Ouroboros_find_max(t_stack *head)
 }
 
 // Function to find the lowest value in the doubly circular linked list
-t_stack	*Ouroboros_find_min(t_stack *head)
+t_stack	*ouroboros_find_min(t_stack *head)
 {
 	t_stack	*current;
 	t_stack	*min;
@@ -75,7 +75,7 @@ t_stack	*Ouroboros_find_min(t_stack *head)
 // Function to find the position of a node in the doubly circular linked list
 // Returns the position of the node in the list
 // or -1 if the node is not in the list
-int	Ouroboros_find_node_pos(t_stack *head, t_stack *node)
+int	ouroboros_find_node_pos(t_stack *head, t_stack *node)
 {
 	t_stack	*current;
 	int		position;
@@ -95,7 +95,7 @@ int	Ouroboros_find_node_pos(t_stack *head, t_stack *node)
 }
 
 // Function to find a node by its position in the doubly circular linked list
-t_stack	*Ouroboros_find_node_with_pos(t_stack *head, int position)
+t_stack	*ouroboros_find_node_with_pos(t_stack *head, int position)
 {
 	t_stack	*current;
 	int		i;

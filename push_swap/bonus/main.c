@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 16:56:10 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:57:44 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int ac, char **av)
 		return (big_crunch(&a, &b, args, ac), write(2, "Error\n", 6), 2);
 	if (checker(&a, &b) < 0)
 		return (big_crunch(&a, &b, args, ac), write(2, "Error\n", 6), 2);
-	if (!is_sorted(a, Ouroboros_count_nodes(a)) || b)
+	if (!is_sorted(a, ouroboros_count_nodes(a)) || b)
 		write(1, "KO\n", 3);
 	else
 		write(1, "OK\n", 3);

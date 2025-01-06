@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:47:26 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ t_stack	*big_bang(char **args)
 	{
 		data = ft_atoi_long(args[i]);
 		if (is_int(data) == 0 || has_double(head, (int) data) != 0)
-			return (Ouroboros_clear(&head), NULL);
-		new = Ouroboros_insert_node_end(&head, (int) data);
+			return (ouroboros_clear(&head), NULL);
+		new = ouroboros_insert_node_end(&head, (int) data);
 		if (!new)
-			return (Ouroboros_clear(&head), NULL);
+			return (ouroboros_clear(&head), NULL);
 		i++;
 	}
 	return (head);
@@ -41,9 +41,9 @@ void	big_crunch(t_stack **a, t_stack **b, char **args, int argc)
 	int	i;
 
 	if (a && *a)
-		Ouroboros_clear(a);
+		ouroboros_clear(a);
 	if (b && *b)
-		Ouroboros_clear(b);
+		ouroboros_clear(b);
 	if (argc == 2)
 	{
 		i = 0;

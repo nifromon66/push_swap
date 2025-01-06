@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Init.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:04:14 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ t_stack	*find_target(t_stack *a, int data)
 
 	current = a;
 	target = NULL;
-	len = Ouroboros_count_nodes(a);
+	len = ouroboros_count_nodes(a);
 	while (len > 0)
 	{
 		if (current->data > data)
@@ -34,7 +34,7 @@ t_stack	*find_target(t_stack *a, int data)
 		len--;
 	}
 	if (!target)
-		target = Ouroboros_find_min(a);
+		target = ouroboros_find_min(a);
 	return (target);
 }
 
@@ -76,7 +76,7 @@ void	initialize_variables_in_b(t_stack *a, t_stack *b)
 	int		i;
 	t_stack	*current;
 
-	len = Ouroboros_count_nodes(b);
+	len = ouroboros_count_nodes(b);
 	current = b;
 	i = 0;
 	while (i < len)
@@ -103,7 +103,7 @@ void	initialize_variables_in_a(t_stack *a)
 	t_stack	*current;
 
 	current = a;
-	len = Ouroboros_count_nodes(a);
+	len = ouroboros_count_nodes(a);
 	i = 0;
 	while (i < len)
 	{

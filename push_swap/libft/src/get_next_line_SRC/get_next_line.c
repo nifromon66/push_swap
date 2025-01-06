@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 17:41:34 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:51:20 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:24:29 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*get_next_line(int fd)
 {
 	static t_list_gnl	*store[200000];
 	t_list_gnl			*error;
-	char			*queue;
+	char				*queue;
 
 	if (fd < 0 || fd > 200000 || BUFFER_SIZE <= 0)
 		return (NULL);
@@ -99,14 +99,14 @@ char	*fetch_queue(t_list_gnl *store)
 void	cutting_in(t_list_gnl **store)
 {
 	t_list_gnl	*last_product;
-	t_list_gnl	*clean_store;
-	int		i;
-	int		j;
-	char	*product;
+	t_list_gnl	*clean;
+	int			i;
+	int			j;
+	char		*product;
 
 	product = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
-	clean_store = (t_list_gnl *)malloc(sizeof(t_list_gnl));
-	if (!product || !clean_store)
+	clean = (t_list_gnl *)malloc(sizeof(t_list_gnl));
+	if (!product || !clean)
 		return ;
 	last_product = ft_lstlast_gnl(*store);
 	i = 0;
@@ -116,9 +116,9 @@ void	cutting_in(t_list_gnl **store)
 	while (last_product->content[i] && last_product->content[++i])
 		product[j++] = last_product->content[i];
 	product[j] = '\0';
-	clean_store->content = product;
-	clean_store->next = NULL;
-	free_store(store, clean_store, product);
+	clean->content = product;
+	clean->next = NULL;
+	free_store(store, clean, product);
 }
 
 //END

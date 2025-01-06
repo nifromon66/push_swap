@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:39:24 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:29:57 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdlib.h>
 # include "../libft/headers/libft_H/libft.h"
 
-// Structure for Ouroboros
+// Structure for ouroboros
 typedef struct s_stack
 {
 	int				data;
@@ -26,9 +26,9 @@ typedef struct s_stack
 	int				rr_cost;
 	int				better_up;
 	int				sort_cost;
-    struct s_stack	*next;
+	struct s_stack	*next;
 	struct s_stack	*previous;
-    struct s_stack	*target;
+	struct s_stack	*target;
 }					t_stack;
 
 // SRC DIRECTORY
@@ -79,22 +79,22 @@ void	sort_2b(t_stack **b);
 void	sort_3(t_stack **a);
 
 // UTILS DIRECTORY
-// utils/Ouroboros1.c utils/Ouroboros2.c utils/Ouroboros3.c utils/Ouroboros4.c
+// utils/ouroboros1.c utils/ouroboros2.c utils/ouroboros3.c utils/ouroboros4.c
 // functions to manipulate doubly circular linked lists
-t_stack	*Ouroboros_create_node(int data);
-t_stack	*Ouroboros_insert_node_end(t_stack **head, int data);
-t_stack	*Ouroboros_insert_node_start(t_stack **head, int data);
-void	Ouroboros_remove_node(t_stack **head, t_stack *node);
-void	Ouroboros_clear(t_stack **head);
-void	Ouroboros_print(t_stack *head);
-t_stack	*Ouroboros_find_min(t_stack *head);
-t_stack	*Ouroboros_find_max(t_stack *head);
-int		Ouroboros_find_node_pos(t_stack *head, t_stack *node);
-t_stack	*Ouroboros_find_node_with_pos(t_stack *head, int pos);
-int		Ouroboros_count_nodes(t_stack *head);
-int		Ouroboros_swap_nodes(t_stack **head, t_stack *node1, t_stack *node2);
-void	Ouroboros_move_node(t_stack **origin, t_stack **destination, t_stack *node);
-t_stack	*Ouroboros_find_next_higher(t_stack *head, t_stack *node);
+t_stack	*ouroboros_create_node(int data);
+t_stack	*ouroboros_insert_node_end(t_stack **head, int data);
+t_stack	*ouroboros_insert_node_start(t_stack **head, int data);
+void	ouroboros_remove_node(t_stack **head, t_stack *node);
+void	ouroboros_clear(t_stack **head);
+void	ouroboros_print(t_stack *head);
+t_stack	*ouroboros_find_min(t_stack *head);
+t_stack	*ouroboros_find_max(t_stack *head);
+int		ouroboros_find_node_pos(t_stack *head, t_stack *node);
+t_stack	*ouroboros_find_node_with_pos(t_stack *head, int pos);
+int		ouroboros_count_nodes(t_stack *head);
+int		ouroboros_swap_nodes(t_stack **head, t_stack *node1, t_stack *node2);
+void	ouroboros_move_node(t_stack **origin, t_stack **dest, t_stack *node);
+t_stack	*ouroboros_find_next_higher(t_stack *head, t_stack *node);
 // src/error_manager.c
 // check if the input is valid, if it is an int, and if it has a double
 int		check_input(char **args);

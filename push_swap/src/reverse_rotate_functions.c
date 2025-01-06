@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   reverse_rotate_functions.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:01:11 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 01:01:28 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:10:56 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

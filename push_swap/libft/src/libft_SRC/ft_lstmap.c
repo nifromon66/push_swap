@@ -13,11 +13,11 @@
 //START
 #include "../../headers/libft_H/libft.h"
 
-t_list_libft	*ft_lstmap(t_list_libft *lst, void *(*f)(void *), void (*del)(void *))
+t_lst_lib	*ft_lstmap(t_lst_lib *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list_libft	*new_lst;
-	t_list_libft	*new_node;
-	void	*tmp;
+	t_lst_lib	*new_lst;
+	t_lst_lib	*new_node;
+	void		*tmp;
 
 	if (!lst || !f || !del)
 		return (NULL);

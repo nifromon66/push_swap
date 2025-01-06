@@ -6,7 +6,7 @@
 /*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/23 17:40:35 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 16:48:16 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 17:24:29 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ int	lstlen_till_newline(t_list_gnl *store)
 	return (len);
 }
 
-void	free_store(t_list_gnl	**store, t_list_gnl *clean_store, char *product)
+void	free_store(t_list_gnl	**store, t_list_gnl *clean, char *product)
 {
 	t_list_gnl	*pop_up;
 
@@ -105,14 +105,14 @@ void	free_store(t_list_gnl	**store, t_list_gnl *clean_store, char *product)
 		*store = pop_up;
 	}
 	*store = NULL;
-	if (clean_store->content[0])
-		*store = clean_store;
+	if (clean->content[0])
+		*store = clean;
 	else
 	{
 		free(product);
 		product = NULL;
-		free(clean_store);
-		clean_store = NULL;
+		free(clean);
+		clean = NULL;
 	}
 }
 

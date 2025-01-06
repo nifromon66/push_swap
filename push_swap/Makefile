@@ -6,7 +6,7 @@
 #    By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/06 16:15:03 by nifromon          #+#    #+#              #
-#    Updated: 2025/01/06 16:35:13 by nifromon         ###   ########.fr        #
+#    Updated: 2025/01/06 17:12:02 by nifromon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,8 @@ SRC =				\
 OBJ =				$(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/$(SRC_DIR)/%.o)
 
 UTILS_SRC =			\
-					$(UTILS_DIR)/Ouroboros_1.c $(UTILS_DIR)/Ouroboros_2.c \
-					$(UTILS_DIR)/Ouroboros_3.c $(UTILS_DIR)/Ouroboros_4.c \
+					$(UTILS_DIR)/ouroboros_1.c $(UTILS_DIR)/ouroboros_2.c \
+					$(UTILS_DIR)/ouroboros_3.c $(UTILS_DIR)/ouroboros_4.c \
 					$(UTILS_DIR)/error_manager.c $(UTILS_DIR)/ft_atoi_long.c \
 					$(UTILS_DIR)/algorithm_utils.c
 

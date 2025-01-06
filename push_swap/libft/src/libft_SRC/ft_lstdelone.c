@@ -13,7 +13,7 @@
 //START
 #include "../../headers/libft_H/libft.h"
 
-void	ft_lstdelone(t_list_libft *lst, void (*del)(void *))
+void	ft_lstdelone(t_lst_lib *lst, void (*del)(void *))
 {
 	del(lst->content);
 	free(lst);
