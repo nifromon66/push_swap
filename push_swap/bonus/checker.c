@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 04:34:59 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 04:37:58 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:29:57 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,27 +18,27 @@
 int	dispatch(t_stack **a, t_stack **b, char *line)
 {
 	if (ft_strncmp(line, "sa\n", 3) == 0)
-		quiet_sa(a);
+		silent_sa(a);
 	else if (ft_strncmp(line, "sb\n", 3) == 0)
-		quiet_sb(b);
+		silent_sb(b);
 	else if (ft_strncmp(line, "ss\n", 3) == 0)
-		quiet_ss(a, b);
+		silent_ss(a, b);
 	else if (ft_strncmp(line, "pa\n", 3) == 0)
-		quiet_pa(a, b);
+		silent_pa(a, b);
 	else if (ft_strncmp(line, "pb\n", 3) == 0)
-		quiet_pb(a, b);
+		silent_pb(a, b);
 	else if (ft_strncmp(line, "ra\n", 3) == 0)
-		quiet_ra(a);
+		silent_ra(a);
 	else if (ft_strncmp(line, "rb\n", 3) == 0)
-		quiet_rb(b);
+		silent_rb(b);
 	else if (ft_strncmp(line, "rr\n", 3) == 0)
-		quiet_rr(a, b);
+		silent_rr(a, b);
     else if (ft_strncmp(line, "rra\n", 4) == 0)
-		quiet_rra(a);
+		silent_rra(a);
 	else if (ft_strncmp(line, "rrb\n", 4) == 0)
-		quiet_rrb(b);
+		silent_rrb(b);
 	else if (ft_strncmp(line, "rrr\n", 4) == 0)
-		quiet_rrr(a, b);
+		silent_rrr(a, b);
 	else
 		return (-1);
 	return (0);

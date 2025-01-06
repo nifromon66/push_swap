@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   big_bang_theory.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:47:26 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 00:51:18 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ t_stack	*big_bang(char **args)
 	{
 		data = ft_atoi_long(args[i]);
 		if (is_int(data) == 0 || has_double(head, (int) data) != 0)
-			return (dclst_clear(&head), NULL);
-		new = dclst_insert_node_end(&head, (int) data);
+			return (Ouroboros_clear(&head), NULL);
+		new = Ouroboros_insert_node_end(&head, (int) data);
 		if (!new)
-			return (dclst_clear(&head), NULL);
+			return (Ouroboros_clear(&head), NULL);
 		i++;
 	}
 	return (head);
@@ -41,9 +41,9 @@ void	big_crunch(t_stack **a, t_stack **b, char **args, int argc)
 	int	i;
 
 	if (a && *a)
-		dclst_clear(a);
+		Ouroboros_clear(a);
 	if (b && *b)
-		dclst_clear(b);
+		Ouroboros_clear(b);
 	if (argc == 2)
 	{
 		i = 0;

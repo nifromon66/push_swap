@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:06:18 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 01:06:38 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	put_lowest_to_top(t_stack **a)
 	t_stack	*lowest;
 	int		len;
 
-	lowest = dclst_find_min(*a);
-	len = dclst_count_nodes(*a);
+	lowest = Ouroboros_find_min(*a);
+	len = Ouroboros_count_nodes(*a);
 	if (lowest->index > len / 2)
 	{
 		while (lowest != *a)
@@ -67,7 +67,7 @@ t_stack	*find_cheapest_node(t_stack *b)
 
 	current = b;
 	cheapest = b;
-	len = dclst_count_nodes(b);
+	len = Ouroboros_count_nodes(b);
 	while (len > 0)
 	{
 		if (current->sort_cost < cheapest->sort_cost)
@@ -101,7 +101,7 @@ void	push_swap(t_stack **a, t_stack **b)
 
 	if (!a || !*a)
 		return ;
-	len = dclst_count_nodes(*a);
+	len = Ouroboros_count_nodes(*a);
 	if (is_sorted(*a, len))
 		return ;
 	if (len == 2)

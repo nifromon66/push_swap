@@ -3,104 +3,119 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+         #
+#    By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/06 01:35:07 by nifromon          #+#    #+#              #
-#    Updated: 2025/01/06 03:38:42 by nifromon         ###   ########.fr        #
+#    Created: 2025/01/06 16:15:03 by nifromon          #+#    #+#              #
+#    Updated: 2025/01/06 16:35:13 by nifromon         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Name of the programm
-NAME =			push_swap
-NAME_BONUS =	checker
+# arguments
+NAME =				push_swap
+BONUS_NAME =		checker
+CC =				gcc
+CFLAGS =			-Wall -Werror -Wextra
+INCLUDES =			-I $(HEADER_DIR)/
 
-# Compilation
-CC =			gcc
-CFLAGS =		-Wall -Wextra -Werror
+# directories
+SRC_DIR =			src
+UTILS_DIR =			utils
+HEADER_DIR =		headers
+OBJ_DIR =			obj
 
-# Link editor
-LDFLAGS =		-L $(LIBFT_DIR) -lft
+BONUS_DIR =			bonus
+BONUS_OBJ_DIR = 	obj_bonus
 
-# Utils
-AR =			ar -rcs
-RM =			rm -rf
+LIBFT_DIR =			libft
+LIBFT =				libft/libft.a
 
-# Repositories
-INC_DIR =		./headers
-SRC_DIR =		./src
-UTILS_DIR =		./utils
+# utils
+RM = 				rm -rf
 
-LIBFT_DIR =		$(INC_DIR)/libft
-LIBFT =			$(LIBFT_DIR)/libft.a
+# sources and objects
+SRC =				\
+					$(SRC_DIR)/big_bang_theory.c $(SRC_DIR)/algorithm.c \
+					$(SRC_DIR)/push_functions.c $(SRC_DIR)/rotate_functions.c \
+					$(SRC_DIR)/reverse_rotate_functions.c $(SRC_DIR)/init.c \
+					$(SRC_DIR)/swap_functions.c
 
-BONUS_DIR =		./bonus
+OBJ =				$(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/$(SRC_DIR)/%.o)
 
-OBJ_DIR =		./obj
-OBJ_MAIN_DIR =	$(OBJ_DIR)/main
+UTILS_SRC =			\
+					$(UTILS_DIR)/Ouroboros_1.c $(UTILS_DIR)/Ouroboros_2.c \
+					$(UTILS_DIR)/Ouroboros_3.c $(UTILS_DIR)/Ouroboros_4.c \
+					$(UTILS_DIR)/error_manager.c $(UTILS_DIR)/ft_atoi_long.c \
+					$(UTILS_DIR)/algorithm_utils.c
 
-OBJ_BONUS_DIR =	$(OBJ_DIR)/bonus
+UTILS_OBJ =			$(UTILS_SRC:$(UTILS_DIR)/%.c=$(OBJ_DIR)/$(UTILS_DIR)/%.o)
 
-# Sources and objects files
-SRCS =			\
-				$(SRC_DIR)/main.c $(SRC_DIR)/init.c \
-				$(SRC_DIR)/big_bang_theory.c $(SRC_DIR)/algorithm.c \
-				$(SRC_DIR)/reverse_rotate_functions.c \
-				$(SRC_DIR)/rotate_functions.c \
-				$(SRC_DIR)/push_functions.c $(SRC_DIR)/swap_functions.c \
-				\
-				$(UTILS_DIR)/algorithm_utils.c $(UTILS_DIR)/error_manager.c \
-				$(UTILS_DIR)/ft_atoi_long.c \
-				$(UTILS_DIR)/Ouroboros_1.c $(UTILS_DIR)/Ouroboros_2.c \
-				$(UTILS_DIR)/Ouroboros_3.c $(UTILS_DIR)/Ouroboros_4.c
+MAIN_SRC =			$(SRC_DIR)/main.c
+OBJ_MAIN =			$(MAIN_SRC:$(SRC_DIR)/main.c=$(OBJ_DIR)/$(SRC_DIR)/main.o)
 
-OBJ_MAIN =		${SRCS:$(SRC_DIR)/%.c=$(OBJ_MAIN_DIR)/%.o}
-OBJ_MAIN =		${OBJ_MAIN}${SRCS:$(UTILS_DIR)/%.c=$(OBJ_MAIN_DIR)/%.o}
+BONUS_SRC =			\
+					$(BONUS_DIR)/checker.c \
+					$(BONUS_DIR)/silent_push.c $(BONUS_DIR)/silent_swap.c \
+					$(BONUS_DIR)/silent_reverse_rotate.c \
+					$(BONUS_DIR)/silent_rotate.c
 
-# Rules and dependencies
-all: 			$(NAME)
-				$(NAME): 		$(LIBFT) $(OBJ_MAIN_DIR) $(OBJ_MAIN)
-								$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
-						
-				$(LIBFT):
-								make -C $(LIBFT_DIR) all
-						
-				$(OBJ_MAIN_DIR)/%.o: $(SRC_DIR)/%.c
-								@mkdir -p $(OBJ_MAIN_DIR)
-								$(CC) -c $(CFLAGS) $< -o $@
-						
-				$(OBJ_MAIN_DIR)/%.o: $(UTILS_DIR)/%.c
-								@mkdir -p $(OBJ_MAIN_DIR)
-								$(CC) -c $(CFLAGS) $< -o $@
+BONUS_OBJ =			$(BONUS_SRC:$(BONUS_DIR)/%.c=$(BONUS_OBJ_DIR)/%.o)
 
-bonus:			$(NAME_BONUS)
-				$(NAME_BONUS):	$(LIBFT) $(OBJ_BONUS_DIR) $(OBJ_BONUS)
-								$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
-						
-				$(LIBFT):
-								make -C $(LIBFT_DIR) all
-						
-				$(OBJ_BONUS_DIR)/%.o: $(BONUS_DIR)/%.c
-								@mkdir -p $(OBJ_BONUS_DIR)
-								$(CC) $(CFLAGS) -c $< -o $@
+BONUS_MAIN_SRC =	$(BONUS_DIR)/main.c
+BONUS_OBJ_MAIN =	$(BONUS_MAIN_SRC:$(BONUS_DIR)/main.c=$(BONUS_OBJ_DIR)/main.o)
 
-				$(OBJ_BONUS_DIR)/%.o: $(SRC_DIR)/%.c
-								@mkdir -p $(OBJ_BONUS_DIR)
-								$(CC) $(CFLAGS) -c $< -o $@
+# rules and dependencies
+all:				$(NAME)
 
-				$(OBJ_BONUS_DIR)/%.o: $(UTILS_DIR)/%.c
-								@mkdir -p $(OBJ_BONUS_DIR)
-								$(CC) $(CFLAGS) -c $< -o $@		
+$(NAME):			$(LIBFT) $(OBJ_MAIN) $(OBJ) $(UTILS_OBJ)
+					$(CC) $(CFLAGS) $(OBJ_MAIN) $(OBJ) $(UTILS_OBJ) $(LIBFT) -o $(NAME)
+
+$(LIBFT):
+					make -C $(LIBFT_DIR) all
+
+$(OBJ_DIR)/$(SRC_DIR)/main.o: $(SRC_DIR)/main.c
+					@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(OBJ_DIR)/$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+					@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(OBJ_DIR)/$(UTILS_DIR)/%.o: $(UTILS_DIR)/%.c
+					@mkdir -p $(OBJ_DIR)/$(UTILS_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+bonus:				$(BONUS_NAME)
+
+$(BONUS_NAME):		$(LIBFT) $(BONUS_OBJ_MAIN) $(BONUS_OBJ) $(OBJ) $(UTILS_OBJ)
+					$(CC) $(CFLAGS) $(BONUS_OBJ_MAIN) $(OBJ) $(UTILS_OBJ) $(BONUS_OBJ) $(LIBFT) -o $(BONUS_NAME)
+
+$(BONUS_OBJ_DIR)/main.o: $(BONUS_DIR)/main.c
+					@mkdir -p $(BONUS_OBJ_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(BONUS_OBJ_DIR)/%.o: $(BONUS_DIR)/%.c
+					@mkdir -p $(BONUS_OBJ_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(BONUS_OBJ_DIR)/$(OBJ_DIR)/$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+					@mkdir -p $(OBJ_DIR)/$(SRC_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
+$(BONUS_OBJ_DIR)/$(OBJ_DIR)/$(UTILS_DIR)/%.o: $(UTILS_DIR)/%.c
+					@mkdir -p $(OBJ_DIR)/$(UTILS_DIR)
+					$(CC) -c $(CFLAGS) $(INCLUDES) $< -o $@
+
 
 clean:
-				make -C $(LIBFT_DIR) clean
-				rm -rf $(OBJ_DIR)
+					make -C $(LIBFT_DIR) clean
+					$(RM) $(OBJ_DIR) $(BONUS_OBJ_DIR)
 
-fclean: 		clean
-				make -C $(LIBFT_DIR) fclean
-				rm -f $(NAME) $(NAME_BONUS)
+fclean:				clean
+					make -C $(LIBFT_DIR) fclean
+					$(RM) $(NAME) $(BONUS_NAME)
 
-re: 			fclean all
+re:					fclean all
 
-.PHONY: 		all bonus clean fclean re
-									
-						
+.PHONY:				all bonus clean fclean re
+
+

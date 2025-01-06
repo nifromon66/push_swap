@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   algorithm_utils.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:11:46 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 01:12:04 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	sort_2b(t_stack **b)
 // Function to sort stack a with 3 or less elements
 void	sort_3(t_stack **a)
 {
-	if (!a || !*a || dclst_count_nodes(*a) < 3)
+	if (!a || !*a || Ouroboros_count_nodes(*a) < 3)
 		return ;
 	if ((*a)->data < (*a)->next->data && (*a)->data < (*a)->previous->data)
 	{

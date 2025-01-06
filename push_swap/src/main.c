@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 01:08:57 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 01:09:13 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:29:02 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,13 @@ int	main(int ac, char **av)
 	else
 		args = av + 1;
 	if (check_input(args) == -1)
-		return (clear_all(&a, &b, args, ac), write(2, "Error\n", 6), 2);
-	a = dclst_load(args);
+		return (big_crunch(&a, &b, args, ac), write(2, "Error\n", 6), 2);
+	a = big_bang(args);
 	if (a == NULL)
-		return (clear_all(&a, &b, args, ac), write(2, "Error\n", 6), 2);
+		return (big_crunch(&a, &b, args, ac), write(2, "Error\n", 6), 2);
 	push_swap(&a, &b);
-	if (!is_sorted(a, dclst_count_nodes(a)) || b)
+	if (!is_sorted(a, Ouroboros_count_nodes(a)) || b)
 		write(1, "Sort has failed\n", 16);
-	clear_all(&a, &b, args, ac);
+	big_crunch(&a, &b, args, ac);
 	return (0);
 }

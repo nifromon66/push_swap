@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nifromon <nifromon@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nifromon <nifromon@student.42perpignan.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/06 00:39:24 by nifromon          #+#    #+#             */
-/*   Updated: 2025/01/06 00:51:33 by nifromon         ###   ########.fr       */
+/*   Updated: 2025/01/06 16:29:57 by nifromon         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Libraries
 # include <unistd.h>
 # include <stdlib.h>
-# include "./libft/headers/libft.h"
+# include "../libft/headers/libft_H/libft.h"
 
 // Structure for Ouroboros
 typedef struct s_stack
@@ -79,22 +79,22 @@ void	sort_2b(t_stack **b);
 void	sort_3(t_stack **a);
 
 // UTILS DIRECTORY
-// utils/dclst1.c utils/dclst2.c utils/dclst3.c utils/dclst4.c
+// utils/Ouroboros1.c utils/Ouroboros2.c utils/Ouroboros3.c utils/Ouroboros4.c
 // functions to manipulate doubly circular linked lists
-t_stack	*dclst_create_node(int data);
-t_stack	*dclst_insert_node_end(t_stack **head, int data);
-t_stack	*dclst_insert_node_start(t_stack **head, int data);
-void	dclst_remove_node(t_stack **head, t_stack *node);
-void	dclst_clear(t_stack **head);
-void	dclst_print(t_stack *head);
-t_stack	*dclst_find_min(t_stack *head);
-t_stack	*dclst_find_max(t_stack *head);
-int		dclst_find_node_pos(t_stack *head, t_stack *node);
-t_stack	*dclst_find_node_with_pos(t_stack *head, int pos);
-int		dclst_count_nodes(t_stack *head);
-int		dclst_swap_nodes(t_stack **head, t_stack *node1, t_stack *node2);
-void	dclst_move_node(t_stack **origin, t_stack **destination, t_stack *node);
-t_stack	*dclst_find_next_higher(t_stack *head, t_stack *node);
+t_stack	*Ouroboros_create_node(int data);
+t_stack	*Ouroboros_insert_node_end(t_stack **head, int data);
+t_stack	*Ouroboros_insert_node_start(t_stack **head, int data);
+void	Ouroboros_remove_node(t_stack **head, t_stack *node);
+void	Ouroboros_clear(t_stack **head);
+void	Ouroboros_print(t_stack *head);
+t_stack	*Ouroboros_find_min(t_stack *head);
+t_stack	*Ouroboros_find_max(t_stack *head);
+int		Ouroboros_find_node_pos(t_stack *head, t_stack *node);
+t_stack	*Ouroboros_find_node_with_pos(t_stack *head, int pos);
+int		Ouroboros_count_nodes(t_stack *head);
+int		Ouroboros_swap_nodes(t_stack **head, t_stack *node1, t_stack *node2);
+void	Ouroboros_move_node(t_stack **origin, t_stack **destination, t_stack *node);
+t_stack	*Ouroboros_find_next_higher(t_stack *head, t_stack *node);
 // src/error_manager.c
 // check if the input is valid, if it is an int, and if it has a double
 int		check_input(char **args);
@@ -112,28 +112,28 @@ int		instruction_4(t_stack **a, t_stack **b, char *line);
 int		instruction_3(t_stack **a, t_stack **b, char *line);
 int		instruction(t_stack **a, t_stack **b, char *line);
 int		checker(t_stack **a, t_stack **b);
-// bonus/push_quiet.c
+// bonus/push_silent.c
 // push the first element of one stack to another
 // without printing anything
-void	quiet_pa(t_stack **a, t_stack **b);
-void	quiet_pb(t_stack **a, t_stack **b);
-// bonus/reverse_rotate_quiet.c
+void	silent_pa(t_stack **a, t_stack **b);
+void	silent_pb(t_stack **a, t_stack **b);
+// bonus/reverse_rotate_silent.c
 // reverse rotate the stack a, stack b, or both
 // without printing anything
-void	quiet_rra(t_stack **a);
-void	quiet_rrb(t_stack **b);
-void	quiet_rrr(t_stack **a, t_stack **b);
-// bonus/rotate_quiet.c
+void	silent_rra(t_stack **a);
+void	silent_rrb(t_stack **b);
+void	silent_rrr(t_stack **a, t_stack **b);
+// bonus/rotate_silent.c
 // rotate the stack a, stack b, or both
 // without printing anything
-void	quiet_ra(t_stack **a);
-void	quiet_rb(t_stack **b);
-void	quiet_rr(t_stack **a, t_stack **b);
-// bonus/swap_quiet.c
+void	silent_ra(t_stack **a);
+void	silent_rb(t_stack **b);
+void	silent_rr(t_stack **a, t_stack **b);
+// bonus/swap_silent.c
 // swap the first two elements of stack a, stack b, or both
 // without printing anything
-void	quiet_sa(t_stack **a);
-void	quiet_sb(t_stack **b);
-void	quiet_ss(t_stack **a, t_stack **b);
+void	silent_sa(t_stack **a);
+void	silent_sb(t_stack **b);
+void	silent_ss(t_stack **a, t_stack **b);
 
 #endif
